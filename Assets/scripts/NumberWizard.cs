@@ -8,9 +8,10 @@ public class NumberWizard : MonoBehaviour {
 	int max;
 	int min;
 	int guess;
-	int maxGuessesAllowed = 10;
+	int maxGuessesAllowed = 9;
 
 	public Text guessText;
+	public Text guessesLeft;
 	
 	// Use this for initialization
 	void Start () {
@@ -45,5 +46,10 @@ public class NumberWizard : MonoBehaviour {
 		if (maxGuessesAllowed <= 0) {
 			Application.LoadLevel("Win");
 		}
+	}
+
+	void Update () {
+		// Added in a way to display the number of guesses the computer has left to the user
+		guessesLeft.text = "Guesses Remaining: " + maxGuessesAllowed.ToString ();
 	}
 }
